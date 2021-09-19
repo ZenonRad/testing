@@ -1,0 +1,29 @@
+# Env
+**/.env
+
+# Venv
+**/.venv
+
+# IDE
+**/.idea
+**/.vscode
+
+# Local running storage folder
+.storage
+data
+
+# Python
+**/*.pyc
+**/__pycache__
+**/*.egg-info/
+
+# NodeJS
+**/node_modules
+/redis*
+**/dump.rdb
+**/build
+# Tests and coverage
+**/.coverage
+**/vendor
+# Docs
+**/_build
