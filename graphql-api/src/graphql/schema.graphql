@@ -1,0 +1,27 @@
+# ------------------- Scalars ------------------- #
+
+scalar Date
+scalar JSON
+
+# ------------------- Enumerations ------------------- #
+
+# ------------------- Queries , mutations and subscriptions ------------------- #
+
+extend type Query {
+  me: User!
+  signIn(email: String!, password: String!): String!
+}
+
+extend type Mutation {
+  signUp(name: String!, email: String!, password: String!): String!
+}
+
+# ------------------- Types ------------------- #
+
+type User @key(fields: "id") {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+# ------------------- Inputs ------------------- #
