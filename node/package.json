@@ -1,0 +1,25 @@
+{
+  "name": "node-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "worker-clt": "ts-node ./rabbitmq/workQueues/client.ts",
+    "worker-serv": "ts-node ./rabbitmq/workQueues/server.ts",
+    "rpc-clt": "ts-node ./rabbitmq/rpc/client.ts",
+    "rpc-serv": "ts-node ./rabbitmq/rpc/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/amqplib": "^0.8.2",
+    "@types/node": "^16.11.7",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "amqp-connection-manager": "^3.7.0",
+    "amqplib": "^0.8.0"
+  }
+}
