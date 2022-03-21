@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"
+      charset="utf-8"
+    ></script>
+    <script type="text/babel">
+      const Greeter = (props) => {
+        const [user, setUser] = React.useState(props.user);
+        const count = React.useRef(0);
+        count.current++;
+
+        console.log(`CHILD ${count.current}`);
+
+        React.useEffect(() => {
+          setInterval(
+            () => setUser((user) => (user === "Admin" ? "HACKER" : "Admin")),
+            2000
+          );
+        }, []);
+
+        return <div>Hello {user}</div>;
+      };
+
+      const Greeting = React.memo(Greeter);
+
+      const Parent = () => {
+        const [force, setForce] = React.useState(false);
+        const count = React.useRef(0);
+        count.current++;
+
+        console.log(`PARENT ${count.current}`);
+
+        React.useEffect(() => {
+          setInterval(() => setForce((force) => !force), 500);
+        }, []);
+
+        return <Greeting user="Admin" />;
+      };
+
+      class App extends React.Component {
+        render() {
+          return <Parent />;
+        }
+      }
+
+      const rootElement = document.getElementById("root");
+      ReactDOM.render(<App />, rootElement);
+    </script>
+    <div id="root"></div>
+  </body>
+</html>
