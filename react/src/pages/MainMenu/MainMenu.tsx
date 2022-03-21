@@ -26,8 +26,9 @@ const MainMenu = (props: IMainMenuProps) => {
       direction="column"
       justify="center"
       alignItems="center"
+      id={id}
       spacing={1}
-      {...{ id, classes: { root: clsx(classes.root, className) } }}
+      classes={{ root: clsx(classes.root, className) }}
     >
       <Grid item>
         <Button
@@ -41,6 +42,12 @@ const MainMenu = (props: IMainMenuProps) => {
       <Grid item>
         <Button variant="outlined" onClick={() => history.push("/loop/freeze")}>
           <FormattedMessage id="main.menu.freezing.event.loop" />
+        </Button>
+      </Grid>
+
+      <Grid item>
+        <Button variant="outlined" onClick={() => history.push("/rerendering")}>
+          <FormattedMessage id="main.menu.rerendering" />
         </Button>
       </Grid>
     </Grid>

@@ -14,6 +14,7 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import MainMenu from "pages/MainMenu";
 import ResponsiveTypography from "./components/ResponsiveTypography";
 import FreezingEventLoop from "components/FreezingEventLoop";
+import Rerendering from "components/Rerendering";
 import messages from "locales/messages";
 import { API_URL, SUBSCRIPTION_URL } from "./config";
 import { TOKEN_LOCAL_STORAGE_KEY } from "./constants";
@@ -80,7 +81,7 @@ const App = () => {
                 exact
                 component={ResponsiveTypography}
               />
-              <Route path="/loop/freeze" exact component={FreezingEventLoop} />
+              <Route path="/rerendering" exact component={Rerendering} />
             </Switch>
           </Router>
         </IntlProvider>

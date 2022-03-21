@@ -1,11 +1,11 @@
-import React from 'react';
-import clsx from 'clsx';
-import Grid from '@material-ui/core/Grid';
+import React from "react";
+import clsx from "clsx";
+import Grid from "@material-ui/core/Grid";
 
-import Typographies from './components/Typographies';
-import EmRules from './components/EmRules';
+import Typographies from "./components/Typographies";
+import EmRules from "./components/EmRules";
 
-import useStyles from './styles';
+import useStyles from "./styles";
 
 export interface IResponsiveTypographyProps {
   id?: string;
@@ -14,20 +14,19 @@ export interface IResponsiveTypographyProps {
 }
 
 const ResponsiveTypography = (props: IResponsiveTypographyProps) => {
-  const { id = 'responsive-typography', className } = props;
+  const { id = "responsive-typography", className } = props;
 
   const classes = useStyles(props);
 
   return (
     <Grid
       container
-      {...{
-        direction: 'column',
-        justify: 'center',
-        alignItems: 'center',
-        id,
-        classes: { root: clsx(classes.root, className) },
-      }}>
+      direction="column"
+      justify="center"
+      alignItems="center"
+      id={id}
+      classes={{ root: clsx(classes.root, className) }}
+    >
       <Grid item container justify="space-evenly">
         <Grid item>
           <Typographies />
